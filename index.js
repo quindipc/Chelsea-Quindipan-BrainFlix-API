@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const fs = require("node:fs");
-const { v4 } = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 const PORT = process.env.PORT || 5050;
@@ -68,7 +68,7 @@ function writeVideos(videos) {
 module.exports = { readVideos, writeVideos };
 
 // Error handling
-app.use((err, req, res) => {
+app.use((err, req, res,next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
 });
