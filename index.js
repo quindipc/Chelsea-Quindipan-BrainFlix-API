@@ -45,8 +45,14 @@ app.post("/videos", (req, res) => {
     const newVideo = {
       id: uuidv4(),
       title,
+      channel,
+      image,
       description,
-      thumbnail,
+      views,
+      likes,
+      duration,
+      video,
+      timestamp,
     };
   
     videos.push(newVideo);
