@@ -14,9 +14,7 @@ const videoRoutes = require("./routes/videos");
 
 // Middleware -- json & allow CORS
 app.use(express.json());    
-app.use(cors({ origin: '*' }));
-// app.use(cors({ origin: process.env.CORS_ORIGIN }));
-// console.log(process.env.CORS_ORIGIN);
+app.use(cors({ origin: process.env.CORS_ORIGIN }));
 
 // Static images
 app.use(express.static("public"));
